@@ -1,0 +1,60 @@
+{
+  "name": "apifox-mcp-server",
+  "version": "0.0.5",
+  "description": "Apifox MCP Server",
+  "scripts": {
+    "build": "tsx ./scripts/build.ts"
+  },
+  "author": "Apifox Team",
+  "license": "UNLICENSED",
+  "keywords": ["apifox", "mcp"],
+  "private": true,
+  "devDependencies": {
+    "@types/node": "^22.13.5",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "prettier": "^3.3.2",
+    "prettier-plugin-organize-imports": "^3.2.4",
+    "tsup": "^8.4.0",
+    "typescript": "^5.5.4",
+    "vitest": "^1.6.0",
+    "zx": "^8.4.0",
+    "tsx": "^4.19.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "commander": "^13.1.0",
+    "@modelcontextprotocol/sdk": "^1.5.0",
+    "axios": "^1.7.9",
+    "tslib": "^2.6.3",
+    "zod": "^3.24.2"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": "cjs",
+    "splitting": false,
+    "sourcemap": false,
+    "clean": true,
+    "minify": true,
+    "noExternal": [
+      "@modelcontextprotocol/sdk",
+      "zod",
+      "axios",
+      "tslib",
+      "commander",
+      "dotenv"
+    ],
+    "define": {
+      "process.env.NODE_ENV": "\"production\"",
+      "process.env.VERSION": "\"0.0.4\""
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
