@@ -3,7 +3,8 @@
   "version": "0.0.5",
   "description": "Apifox MCP Server",
   "scripts": {
-    "build": "tsx ./scripts/build.ts"
+    "build": "tsx ./scripts/build.ts",
+    "build:publish": "tsx ./scripts/prepublish.ts"
   },
   "author": "Apifox Team",
   "license": "UNLICENSED",
